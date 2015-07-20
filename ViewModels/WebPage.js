@@ -36,31 +36,31 @@ $(document).ready(function () {
     $("#Menu_Title2").letterfx({ "fx": "spin", "backwards": false, "timing": 50, "fx_duration": "2200ms", "letter_end": "restore", "element_end": "restore" });
 
     //ToolTips...
-    $(".tooltipstered").tooltip({
-        arrow: true,
-        timer: 10
-    });
+    //$(".tooltipstered").tooltip({
+    //    arrow: true,
+    //    timer: 10
+    //});
 
     //Start he TourTip ----
-    var showTourTip = null;
+    //var showTourTip = null;
     //If the html5 browser support Local Storage:
     //if (typeof (Storage) !== "undefined") {
     //    showTourTip = localStorage.getItem("tourTip");
     //}
-    if (showTourTip == null) {
-        //Tourtip - Prompt Button
-        $(".Console_button").tourTip({
-            description: "Like prompts?... Click here! ;)",
-            close: true,
-            position: 'left'
-        });
+    //if (showTourTip == null) {
+    //    //Tourtip - Prompt Button
+    //    $(".Console_button").tourTip({
+    //        description: "Like prompts?... Click here! ;)",
+    //        close: true,
+    //        position: 'left'
+    //    });
 
-        $.tourTip.start();
+    //    $.tourTip.start();
 
         //if (typeof (Storage) !== "undefined") {
         //    showTourTip = localStorage.setItem("tourTip", "true");
         //}
-    }
+    //}
     
     //Start... fullPage
     $("#fullPage").fullpage({

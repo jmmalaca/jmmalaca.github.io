@@ -120,7 +120,7 @@ function CallServer_RequestDataInfo() {
         // The 'type' property sets the HTTP method.
         type: 'GET',
         // The URL to make the request to.
-        url: 'http://localhost:8080/countsdata',
+        url: 'http://node-server-v1.herokuapp.com/countsdata',
 
         // The 'contentType' property sets the 'Content-Type' header.
         contentType: "application/json",
@@ -281,7 +281,7 @@ function AddFeaturesInfo(divName, data, colors, title, widthValue) {
 function CallServer_RequestFeaturesInfo() {
     $.ajax({
         type: 'GET',
-        url: 'http://localhost:8080/countsfeatures',
+        url: 'http://node-server-v1.herokuapp.com/countsfeatures',
         contentType: "application/json",
         beforeSend: function () {
             LoadingData("Words Data");
@@ -299,7 +299,7 @@ function CallServer_RequestFeaturesInfo() {
 function CallServer_RequestTagsInfo() {
     $.ajax({
         type: 'GET',
-        url: 'http://localhost:8080/countsTagsfeatures',
+        url: 'http://node-server-v1.herokuapp.com/countsTagsfeatures',
         contentType: "application/json",
         beforeSend: function () {
             LoadingData("POS-Tag Data");
@@ -333,7 +333,7 @@ function ShowBestFeaturesData(data) {
 function CallServer_RequestTopFeaturesInfo() {
     $.ajax({
         type: 'GET',
-        url: 'http://localhost:8080/bestWordsFeatures',
+        url: 'http://node-server-v1.herokuapp.com/bestWordsFeatures',
         contentType: "application/json",
         beforeSend: function () {
             LoadingData("Best Features Data");
@@ -353,7 +353,7 @@ function LoadingData(text) {
     $("#GroupedBarTagsBox").css("visibility", "hidden");
     $("#BestFeaturesLists").css("visibility", "hidden");
     $("#ErrorMsg").empty();
-    $("#ErrorMsg").append("<img id=\"LoadPac\" src=\"../../images/Gifs/ajaxLoader.gif\" style=\"width:13px;height:13px\">Waiting for " + text + "...</img>");
+    $("#ErrorMsg").append("<img id=\"LoadPac\" src=\"images/Gifs/ajaxLoader.gif\" style=\"width:13px;height:13px\">Waiting for " + text + "...</img>");
     $("#ErrorMsg").css("visibility", "visible");
 }
 

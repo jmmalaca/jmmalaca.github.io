@@ -18,11 +18,11 @@ function AddPresentationData() {
     $("#Presentation-Page").append("<div class=\"Location_Map animated bounceInLeft\"></div>");
     $(".Location_Map").append("<div class=\"Location_Logo hover-shadow tooltipstered\" title=\"Coimbra\"></div>");
     $(".Location_Logo").append("<img src=\"images/Presentation/Location_transp.png\" />");
-    $(".Location_Map").append("<img src=\"../../images/Presentation/Europe.png\" alt=\"Europe\">");
+    $(".Location_Map").append("<img src=\"images/Presentation/Europe.png\" alt=\"Europe\">");
     
     //Add data for Labels Box
     $("#Presentation-Page").append("<div class=\"Labels_Wordle animated bounceInRight\"></div>");
-    $(".Labels_Wordle").append("<img src=\"../../images/Presentation/Wordle.PNG\" alt=\"Wordle\">");
+    $(".Labels_Wordle").append("<img src=\"images/Presentation/Wordle.PNG\" alt=\"Wordle\">");
 
     //Add data for Quote Box
     $("#Presentation-Page").append("<div class=\"Quote-Box animated bounceInLeft\"></div>");

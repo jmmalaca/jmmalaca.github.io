@@ -1,8 +1,8 @@
 ﻿//Show Education and Work Data ----------
 function AddWorkData() {
     $("#Work-Page").append("<div class=\"Work-Box\"></div>");
-    $(".Work-Box").append("<img class=\"Work_Logo\" src=\"../../images/Work/Work.png\" title=\"Work\"/>");
-    $(".Work-Box").append("<a class=\"CV_Logo hover tooltipstered\" href=\"../../CurriculumVitae/cv_JoseMMalaca.pdf\" target=\"_blank\" title=\"Download Resume\"> <img src=\"../../images/Work/CV.png\"/> </a>");
+    $(".Work-Box").append("<img class=\"Work_Logo\" src=\"images/Work/Work.png\" title=\"Work\"/>");
+    $(".Work-Box").append("<a class=\"CV_Logo hover tooltipstered\" href=\"CurriculumVitae/cv_JoseMMalaca.pdf\" target=\"_blank\" title=\"Download Resume\"> <img src=\"images/Work/CV.png\"/> </a>");
     $(".Work-Box").append("<div id=\"Works-List\" data-bind=\"foreach: WorksData\"> " +
         "<p class=\"WorkTitle BlockSelection\" data-bind=\"html: paragraphOne\"></p>" +
         "<p class=\"WorkDescription BlockSelection\" data-bind=\"html: paragraphTwo\"></p> " +
@@ -10,14 +10,14 @@ function AddWorkData() {
     
     //Add Events Box
     $("#Work-Page").append("<div class=\"Events-Box\"></div>");
-    $(".Events-Box").append("<img class=\"Events-Logo\" src=\"../../images/Work/Events.png\" />");
+    $(".Events-Box").append("<img class=\"Events-Logo\" src=\"images/Work/Events.png\" />");
     $(".Events-Box").append("<div class=\"Events-List\" data-bind=\"foreach: EventsData\"> " +
         "<a class=\"Event\" data-bind=\"html: data, attr: {'id': title, href: url}\" target=\"_blank\"> </a> " +
         "</div>");
 
     //Add Education Box
     $("#Education-Page").append("<div class=\"Education-Box\"></div>");
-    $(".Education-Box").append("<img class=\"Education_Logo\" src=\"../../images/Work/Education.png\" title=\"Education\" />");
+    $(".Education-Box").append("<img class=\"Education_Logo\" src=\"images/Work/Education.png\" title=\"Education\" />");
     $(".Education-Box").append("<div id=\"University\">" +
         "<p class=\"BlockSelection\"> \><a id=\"DEI\" href=\"http://www.uc.pt/en/fctuc/dei\" target=\"_blank\">Department of Informatics Engineering</a>, Faculty of Science and Technology, University of Coimbra, Portugal</p> " +
         "<p id=\"Master\" class=\"BlockSelection\"><font size=\"3\" color=\"green\">☑</font> <b>Masters</b> in Informatics Engineering </p> " +
@@ -28,7 +28,7 @@ function AddWorkData() {
 
     //Add data for Labels Box
     $("#Education-Page").append("<div class=\"WorkLabels_Wordle\"></div>");
-    $(".WorkLabels_Wordle").append("<img src=\"../../images/Work/Wordle_Work.PNG\" alt=\"Wordle\">");
+    $(".WorkLabels_Wordle").append("<img src=\"images/Work/Wordle_Work.PNG\" alt=\"Wordle\">");
 }
 
 var workData = function(title, company, companyUrl, date, description) {
