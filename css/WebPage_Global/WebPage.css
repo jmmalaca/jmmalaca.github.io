@@ -14,19 +14,19 @@
 }
 
 #Presentation-Page {
-    background-color: gold;
+    background-color: #ffa500;
 }
 
 #WorkSection {
-    background-color: orange;
+    background-color: #f28b0b;
 }
 
 #SocialSection {
-    background-color: orangered;
+    background-color: #ec660b;
 }
 
 #ProjectsSection {
-    background-color: firebrick;
+    background-color: #f45611;
 }
 
 /* Width and Heigth... just put it on the screen... :) */
