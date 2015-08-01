@@ -12,18 +12,18 @@ function AddWorkData() {
     $("#Work-Page").append("<div class=\"Events-Box\"></div>");
     $(".Events-Box").append("<img class=\"Events-Logo\" src=\"images/Work/Events.png\" />");
     $(".Events-Box").append("<div class=\"Events-List\" data-bind=\"foreach: EventsData\"> " +
-        "<a class=\"Event\" data-bind=\"html: data, attr: {'id': title, href: url}\" target=\"_blank\"> </a> " +
+        "<a class=\"Event btn btn-lg btn-link\" data-bind=\"html: data, attr: {'id': title, href: url}\" target=\"_blank\"> </a> " +
         "</div>");
-
+    
     //Add Education Box
     $("#Education-Page").append("<div class=\"Education-Box\"></div>");
     $(".Education-Box").append("<img class=\"Education_Logo\" src=\"images/Work/Education.png\" title=\"Education\" />");
     $(".Education-Box").append("<div id=\"University\">" +
-        "<p class=\"BlockSelection\"> \><a id=\"DEI\" href=\"http://www.uc.pt/en/fctuc/dei\" target=\"_blank\">Department of Informatics Engineering</a>, Faculty of Science and Technology, University of Coimbra, Portugal</p> " +
+        "<p class=\"BlockSelection\"> \><a id=\"DEI\" class=\"btn btn-lg btn-link\" href=\"http://www.uc.pt/en/fctuc/dei\" target=\"_blank\">Department of Informatics Engineering</a>, Faculty of Science and Technology, University of Coimbra, Portugal</p> " +
         "<p id=\"Master\" class=\"BlockSelection\"><font size=\"3\" color=\"green\">☑</font> <b>Masters</b> in Informatics Engineering </p> " +
         "<p id=\"Graduate\" class=\"BlockSelection\"><font size=\"3\" color=\"green\">☑</font> Informatics Engineering <b>Graduate</b> </p> </div>");
     $(".Education-Box").append("<div id=\"School\"> " +
-        "<p class=\"BlockSelection\"> \><a id=\"Brotero\" href=\"http://www.brotero.pt/\" target=\"blank\">High School Avelar Brotero</a>, Coimbra, Portugal</p> " +
+        "<p class=\"BlockSelection\"> \><a id=\"Brotero\" class=\"btn btn-lg btn-link\" href=\"http://www.brotero.pt/\" target=\"blank\">High School Avelar Brotero</a>, Coimbra, Portugal</p> " +
         "<p id=\"Tecnichian\" class=\"BlockSelection\"><font size=\"3\" color=\"green\">☑</font> Informatics <b>Technician</b> (Técnico Informático)</p> </div>");
 
     //Add data for Labels Box
@@ -32,7 +32,7 @@ function AddWorkData() {
 }
 
 var workData = function(title, company, companyUrl, date, description) {
-    this.paragraphOne = "<font size=\"3\" color=\"green\"> ϟ </font> <b>"+title+"</b>, <a class=\"url\" href=\""+companyUrl+"\" target=\"_blank\"> "+company+"</a>, " + date + " </p>";
+    this.paragraphOne = "<font size=\"3\" color=\"green\"> ϟ </font> <b>"+title+"</b>, <a class=\"btn btn-lg btn-link\" href=\""+companyUrl+"\" target=\"_blank\"> "+company+"</a>, " + date + " </p>";
     this.paragraphTwo = description;
 }
 

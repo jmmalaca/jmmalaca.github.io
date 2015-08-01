@@ -1,4 +1,6 @@
 ﻿var DEBUG = true;
+var URL = "http://localhost:";
+var Port = 3000;
 
 function EmoticonsPieChart(divName, pieTitle, values, labels, colors, showLabels) {
     var content = [];
@@ -121,7 +123,7 @@ function CallServer_RequestDataInfo() {
     var url = "http://node-server-v1.herokuapp.com";
     if (DEBUG)
     {
-        url = "http://localhost:8080";   
+        url = URL + Port;   
     }
     
     $.ajax({
@@ -290,7 +292,7 @@ function CallServer_RequestFeaturesInfo() {
     var url = "http://node-server-v1.herokuapp.com";
     if (DEBUG)
     {
-        url = "http://localhost:8080";   
+        url = URL + Port;   
     }
     
     $.ajax({
@@ -314,7 +316,7 @@ function CallServer_RequestTagsInfo() {
     var url = "http://node-server-v1.herokuapp.com";
     if (DEBUG)
     {
-        url = "http://localhost:8080";   
+        url = URL + Port;   
     }
     
     $.ajax({
@@ -354,7 +356,7 @@ function CallServer_RequestTopFeaturesInfo() {
     var url = "http://node-server-v1.herokuapp.com";
     if (DEBUG)
     {
-        url = "http://localhost:8080";   
+        url = URL + Port;   
     }
     
     $.ajax({
@@ -385,7 +387,7 @@ function LoadingData(text) {
 
 function ShowErrorMessage(divName) {
     $("#ErrorMsg").empty();
-    $("#ErrorMsg").append("<p>Data NOT Available, sry...</p>");
+    $("#ErrorMsg").append("<p>Data NOT Available, for now...</p>");
     $("#" + divName).empty();
     $("#ErrorMsg").css("visibility", "visible");
 }
