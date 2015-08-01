@@ -24,7 +24,7 @@
     $(".Mail-Box").append("<form class=\"MailMe\" id =\"MailForm\" action=\"mailto:jose.miguel.malaca@me.com\" method=\"post\">"
         + "<input type=\"text\" name=\"name\" placeholder=\"name\" required=\"required\" size=\"15\">"
         + "<input type=\"email\" name=\"mail\" placeholder=\"email\" required=\"required\" size=\"25\">"
-        + "<br><br><input type=\"text\" name=\"comment\" placeholder=\"drop me a line...\" required=\"required\" size=\"50\">"
+        + "<br><br><input type=\"text\" name=\"comment\" placeholder=\"send email is in construction... almost there... ;)\" required=\"required\" size=\"50\">"
         + "<br><br><input type=\"submit\" value=\"Send it to me\">"
         + "</form>");
 }
@@ -38,7 +38,7 @@ $(document).ready(function() {
     $("#MailForm").submit(function (event) {
         event.preventDefault();
         $("#MailForm").reset;
-        swal("Mail sended.", "this send email is in construction... almost there... ;)", "success");
+        swal("Mail sended.", "send email is in construction... almost there... ;)", "success");
     });
 
     //and with the Share button...
