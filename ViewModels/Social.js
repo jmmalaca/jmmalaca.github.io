@@ -22,9 +22,9 @@
     $(".Mail-Box").append("<img class=\"Mail\" src=\"images/Social/mail.png\" />");
     $(".Mail-Box").append("<p id=\"TitleMail\" class=\"BlockSelection\"> Drop me a line </p>");
     $(".Mail-Box").append("<form class=\"MailMe\" id =\"MailForm\" action=\"mailto:jose.miguel.malaca@me.com\" method=\"post\">"
-        + "<input type=\"text\" name=\"name\" value=\"name\" required=\"required\" size=\"15\">"
-        + "<input type=\"text\" name=\"mail\" value=\"email\" required=\"required\" size=\"25\">"
-        + "<br><br><input type=\"text\" name=\"comment\" value=\"comment\" required=\"required\" size=\"50\">"
+        + "<input type=\"text\" name=\"name\" placeholder=\"name\" required=\"required\" size=\"15\">"
+        + "<input type=\"email\" name=\"mail\" placeholder=\"email\" required=\"required\" size=\"25\">"
+        + "<br><br><input type=\"text\" name=\"comment\" placeholder=\"drop me a line...\" required=\"required\" size=\"50\">"
         + "<br><br><input type=\"submit\" value=\"Send it to me\">"
         + "</form>");
 }
@@ -36,9 +36,9 @@ $(document).ready(function() {
 
     //what happens in the Mail-Box...
     $("#MailForm").submit(function (event) {
-        alert("Thank you for your comment!");
         event.preventDefault();
-        $("#MailForm").reset();
+        $("#MailForm").reset;
+        swal("Mail sended.", "this send email is in construction... almost there... ;)", "success");
     });
 
     //and with the Share button...

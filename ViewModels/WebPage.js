@@ -41,7 +41,7 @@ $(document).ready(function () {
     //    timer: 10
     //});
 
-    //Start he TourTip ----
+    //Start the TourTip ----
     //var showTourTip = null;
     //If the html5 browser support Local Storage:
     //if (typeof (Storage) !== "undefined") {

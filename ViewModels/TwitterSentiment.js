@@ -1,4 +1,6 @@
-﻿function EmoticonsPieChart(divName, pieTitle, values, labels, colors, showLabels) {
+﻿var DEBUG = true;
+
+function EmoticonsPieChart(divName, pieTitle, values, labels, colors, showLabels) {
     var content = [];
     var count = 0;
     if (showLabels) {
@@ -116,11 +118,17 @@ function AddDataInfo(data) {
 }
 
 function CallServer_RequestDataInfo() {
+    var url = "http://node-server-v1.herokuapp.com";
+    if (DEBUG)
+    {
+        url = "http://localhost:8080";   
+    }
+    
     $.ajax({
         // The 'type' property sets the HTTP method.
         type: 'GET',
         // The URL to make the request to.
-        url: 'http://node-server-v1.herokuapp.com/countsdata',
+        url: url + '/countsdata',
 
         // The 'contentType' property sets the 'Content-Type' header.
         contentType: "application/json",
@@ -279,9 +287,15 @@ function AddFeaturesInfo(divName, data, colors, title, widthValue) {
 }
 
 function CallServer_RequestFeaturesInfo() {
+    var url = "http://node-server-v1.herokuapp.com";
+    if (DEBUG)
+    {
+        url = "http://localhost:8080";   
+    }
+    
     $.ajax({
         type: 'GET',
-        url: 'http://node-server-v1.herokuapp.com/countsfeatures',
+        url: url + '/countsfeatures',
         contentType: "application/json",
         beforeSend: function () {
             LoadingData("Words Data");
@@ -297,9 +311,15 @@ function CallServer_RequestFeaturesInfo() {
 }
 
 function CallServer_RequestTagsInfo() {
+    var url = "http://node-server-v1.herokuapp.com";
+    if (DEBUG)
+    {
+        url = "http://localhost:8080";   
+    }
+    
     $.ajax({
         type: 'GET',
-        url: 'http://node-server-v1.herokuapp.com/countsTagsfeatures',
+        url: url + '/countsTagsfeatures',
         contentType: "application/json",
         beforeSend: function () {
             LoadingData("POS-Tag Data");
@@ -331,9 +351,15 @@ function ShowBestFeaturesData(data) {
 }
 
 function CallServer_RequestTopFeaturesInfo() {
+    var url = "http://node-server-v1.herokuapp.com";
+    if (DEBUG)
+    {
+        url = "http://localhost:8080";   
+    }
+    
     $.ajax({
         type: 'GET',
-        url: 'http://node-server-v1.herokuapp.com/bestWordsFeatures',
+        url: url + '/bestWordsFeatures',
         contentType: "application/json",
         beforeSend: function () {
             LoadingData("Best Features Data");
