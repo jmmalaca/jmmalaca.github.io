@@ -2,7 +2,7 @@
 function AddWorkData() {
     $("#Work-Page").append("<div class=\"Work-Box\"></div>");
     $(".Work-Box").append("<img class=\"Work_Logo\" src=\"images/Work/Work.png\" title=\"Work\"/>");
-    $(".Work-Box").append("<a class=\"CV_Logo hover tooltipstered\" href=\"CurriculumVitae/cv_JoseMMalaca.pdf\" target=\"_blank\" title=\"Download Resume\"> <img src=\"images/Work/CV.png\"/> </a>");
+    $(".Work-Box").append("<a class=\"CV_Logo hover tooltipstered\" href=\"http://www.dropbox.com/s/x5y4bfev09dzrhv/cv_JoseMMalaca.pdf?dl=0\" target=\"_blank\" title=\"Download Resume\"> <img src=\"images/Work/CV.png\"/> </a>");
     $(".Work-Box").append("<div id=\"Works-List\" data-bind=\"foreach: WorksData\"> " +
         "<p class=\"WorkTitle BlockSelection\" data-bind=\"html: paragraphOne\"></p>" +
         "<p class=\"WorkDescription BlockSelection\" data-bind=\"html: paragraphTwo\"></p> " +
