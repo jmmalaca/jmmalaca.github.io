@@ -22,9 +22,9 @@
     $(".Mail-Box").append("<img class=\"Mail\" src=\"images/Social/mail.png\" />");
     $(".Mail-Box").append("<p id=\"TitleMail\" class=\"BlockSelection\"> Drop me a line </p>");
     $(".Mail-Box").append("<form class=\"MailMe\" id =\"MailForm\" action=\"mailto:jose.miguel.malaca@me.com\" method=\"post\">"
-        + "<input type=\"text\" name=\"name\" placeholder=\"name\" required=\"required\" size=\"15\">"
-        + "<input type=\"email\" name=\"mail\" placeholder=\"email\" required=\"required\" size=\"25\">"
-        + "<br><br><input type=\"text\" name=\"comment\" placeholder=\"send email is in construction... almost there... ;)\" required=\"required\" size=\"50\">"
+        + "<input id=\"inputName\" type=\"text\" name=\"name\" placeholder=\"name\" required=\"required\" size=\"15\">"
+        + "<input id=\"inputMail\" type=\"email\" name=\"mail\" placeholder=\"email\" required=\"required\" size=\"25\">"
+        + "<br><br><input id=\"inputText\" type=\"text\" name=\"comment\" placeholder=\"send email is in construction... almost there... ;)\" required=\"required\" size=\"50\">"
         + "<br><br><input type=\"submit\" value=\"Send it to me\">"
         + "</form>");
 }
@@ -37,10 +37,16 @@ $(document).ready(function() {
     //what happens in the Mail-Box...
     $("#MailForm").submit(function (event) {
         event.preventDefault();
-        $("#MailForm").reset;
+        
+        //show some feedback to the user...
         swal("Mail sended.", "send email is in construction... almost there... ;)", "success");
+        
+        //clean form inputs data...
+        document.getElementById("inputName").value = "";
+        document.getElementById("inputMail").value = "";
+        document.getElementById("inputText").value = "";
     });
-
+    
     //and with the Share button...
     var share = new Share(".share-button", {
         networks: {
