@@ -32,10 +32,10 @@
 /* Width and Heigth... just put it on the screen... :) */
 .WindowSize {
     position: fixed;
-    top: 2.5%;
+    top: 1.5%;
     width: 200px;
     height: 20px;
-    right: 8px;
+    right: 30px;
     bottom: 0;
     margin: 1px;
     font-family: Arial, cursive;
@@ -44,6 +44,7 @@
     font-size: 8px;
     color: black;
     text-align: right;
+    z-index: 1;
 }
 
 .WindowSize p {
