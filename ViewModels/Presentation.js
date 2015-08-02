@@ -30,14 +30,14 @@ function AddPresentationData() {
     $(".Quote-Box").append("<p id=\"Quote_Sign\" class=\"BlockSelection\"></p>");
 }
 
-var quote = function(who, said) {
+var Quote = function(who, said) {
     this.who = "– " + who;
     this.said = said;
 };
 
 var quotes = [
-    new quote("Stephen Hawking", "<q>Quiet people have the <b>loudest</b> minds.</q>"),
-    new quote("Benjamin Franklin", "<q>Tell me and I forget, teach me and I may remember, <b>involve</b> me and I learn.</q>")
+    new Quote("Stephen Hawking", "<q>Quiet people have the <b>loudest</b> minds.</q>"),
+    new Quote("Benjamin Franklin", "<q>Tell me and I forget, teach me and I may remember, <b>involve</b> me and I learn.</q>")
 ];
 
 function AddQuotes() {
@@ -58,7 +58,7 @@ $(document).ready(function() {
 
     //Add Quotes...
     AddQuotes();
-
+    
     //What happens to the map logo click...
     $(".Location_Logo").click(function () {
         window.open("https://goo.gl/maps/FyaBm");

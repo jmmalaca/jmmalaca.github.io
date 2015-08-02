@@ -1,4 +1,7 @@
-﻿function AddSocialData() {
+﻿/* global Share */
+/* global swal */
+
+function AddSocialData() {
     //Add Social Box... Social Linnks...
     $("#Social-Page").append("<div class=\"Social-Box\"></div>");
     $(".Social-Box").append("<a class=\"Facebook tooltipstered\" href=\"https://www.facebook.com/cartOOnPT\" target=\"_blank\" title=\"Facebook\"> <img src=\"images/Social/facebook.png\" /> </a> ");
@@ -48,7 +51,7 @@ $(document).ready(function() {
     });
     
     //and with the Share button...
-    var share = new Share(".share-button", {
+    new Share(".share-button", {
         networks: {
             pinterest: {
                 enabled: false,
