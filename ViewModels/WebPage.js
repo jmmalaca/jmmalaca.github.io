@@ -37,12 +37,18 @@ $(document).ready(function () {
     //Titles - TextFX
     $("#Menu_Title2").letterfx({ "fx": "spin", "backwards": false, "timing": 50, "fx_duration": "2200ms", "letter_end": "restore", "element_end": "restore" });
 
-    //ToolTips...
-    //$(".tooltipstered").tooltip({
-    //    arrow: true,
-    //    timer: 10
-    //});
-
+    //ToolTip...
+    $(".tooltipstered").tooltipster({
+        animation: 'grow',
+        delay: 200,
+        theme: 'tooltipster-default',
+        touchDevices: false,
+        trigger: 'hover',
+        onlyOne: true,
+        position: 'bottom',
+        offsetY: 1
+    });
+    
     //Start the TourTip ----
     //var showTourTip = null;
     //If the html5 browser support Local Storage:
