@@ -7,7 +7,7 @@
 - CSS
 - Javascript
 
-#####Technologies used:
+#####Frameworks used:
 - jquery-2.1.1.js
 - jquery-ui.js
 - jquery.fullPage.js
