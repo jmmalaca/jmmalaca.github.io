@@ -35,20 +35,20 @@ function AddWorkData() {
 }
 
 var WorkData = function(title, company, companyUrl, date, description) {
-    this.paragraphOne = "<font size=\"3\" color=\"green\"> ϟ </font> <b>"+title+"</b>, <a href=\""+companyUrl+"\" target=\"_blank\"> "+company+"</a>, " + date + " </p>";
+    this.paragraphOne = "<font size=\"3\" color=\"green\"> ϟ </font> <b>"+title+"</b>, <a href=\""+companyUrl+"\" target=\"_blank\">"+company+"</a>, " + date + " </p>";
     this.paragraphTwo = description;
 }
 
 var EventData = function (title, url, data) {
     this.title = title;
     this.url = url;
-    this.data = "<p class=\"BlockSelection\"> <font size=\"3\" color=\"green\">☑</font> " + data + " </p>";
+    this.data = "<p class=\"BlockSelection\"> <font size=\"3\" color=\"green\"> ☑ </font> " + data + " </p>";
 }
 
 // The view model is an abstract description of the state of the UI, but without any knowledge of the UI technology (HTML)
 var viewModelData = {
     WorksData: [
-        new WorkData("Software Engineer", "BroadScope, Lda", "http://www.broadscope.eu/", "'14/..", "The traineeship focus on R&D has been closed, the result was positive, and so I have been <b>invited</b> to continue on the company and be part of the BroadScope <b>team</b>. With this I'm inserted in the BroadScope team and in the processs of building of the main project of the company."),
+        new WorkData("Software Engineer", "BroadScope, Lda", "http://www.broadscope.eu/", "'14/..", "The traineeship focus on Sentiment Analysis has been closed. New challenges will come with the invitation to be part of the BroadScope team, and help build the company projects. Develop mainly in the backend system, and guaranteeing the proper test coverage, are the main tasks ahead. <b>Visual Studio</b>, <b>C#</b>, <b>Linq</b>, <b>unit testing</b> are the main keys for this work."),
         new WorkData("Software Engineer Trainee", "BroadScope, Lda", "http://www.broadscope.eu/", "'13/14", "<b>Research and develop</b> solutions, analyze results and present reports. Turn raw data into useful data, was the project presented by the BroadScope involving three major areas: <b>\"Social/Text Mining\", \"Natural Language Processing\" and \"Machine Learning\"</b>.")
     ],
 
