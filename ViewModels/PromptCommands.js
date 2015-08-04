@@ -1,5 +1,5 @@
 ﻿var links = [
-    "../CurriculumVitae/cv_JoseMMalaca.pdf",
+    "http://www.dropbox.com/s/x5y4bfev09dzrhv/cv_JoseMMalaca.pdf?dl=0",
     "https://twitter.com/tOOnPT",
     "https://www.facebook.com/cartOOnPT",
     "http://instagram.com/josemiguelmalaca",
