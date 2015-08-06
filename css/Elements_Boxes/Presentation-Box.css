@@ -4,11 +4,11 @@
         background-color: black;
         -ms-opacity: 0.8;
         opacity: 0.8;
-        width: 80%;
-        height: auto;
+        width: 93%;
+        height: 77%;
         position: absolute;
-        top: 30%;
-        left: 10%;
+        top: 19%;
+        left: 3.5%;
         border: 2px solid;
         border-color: black;
         -ms-border-radius: 1px;
@@ -21,26 +21,26 @@
 
     .Me_Picture {
         position: relative;
-        width: 150px;
-        height: 150px;
-        top: 5%;
+        width: 48%;
+        height: 40%;
+        top: 4%;
         left: 2%;
         margin-top: 2%;
         border: 2px solid;
-        -ms-border-radius: 100px;
-        border-radius: 100px;
+        -ms-border-radius: 100%;
+        border-radius: 100%;
         float: left;
     }
 
     .Resume {
         position: relative;
-        top: 6%;
+        top: 3%;
         left: 4%;
         width: 93%;
         margin-top: 2%;
         margin-bottom: 2%;
         font-family: Arial, cursive;
-        font-size: 18px;
+        font-size: 100%;
         word-spacing: 3px;
         line-height: 130%;
         color: whitesmoke;

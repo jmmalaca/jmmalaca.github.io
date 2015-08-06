@@ -21,31 +21,31 @@
         position: relative;
         top: 0;
         left: 10%;
-        width: 50%;
+        width: auto;
         height: auto;
         display: block;
     }
 
     #Menu_Title1 {
-        font-size: 25px;
+        font-size: 150%;
         position: relative;
         left: 2%;
     }
 
     #Menu_Title2 {
-        font-size: 15px;
+        font-size: 90%;
         position: relative;
         left: 6%;
     }
 
     #Menu_Buttons {
         position: relative;
-        left: 4%;
-        margin-bottom: 3%;
-        margin-top: 3%;
+        left: 15%;
+        margin-bottom: 1%;
+        margin-top: 0%;
         width: auto;
         height: auto;
-        display: block;
+        display: none;
     }
 
     .Menu-Button {

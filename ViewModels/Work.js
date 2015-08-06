@@ -5,9 +5,9 @@
 function AddWorkData() {
     $("#Work-Page").append("<div class=\"Work-Box\"></div>");
     $(".Work-Box").append("<img class=\"Work_Logo\" src=\"images/Work/Work.png\" title=\"Work\"/>");
-    $(".Work-Box").append("<a class=\"CV_Logo hover tooltipstered\" href=\"http://www.dropbox.com/s/x5y4bfev09dzrhv/cv_JoseMMalaca.pdf?dl=0\" target=\"_blank\" title=\"Download Resume\"> <img src=\"images/Work/CV.png\"/> </a>");
+    $(".Work-Box").append("<a class=\"CV_Logo hover tooltipstered\" href=\"http://www.dropbox.com/s/x5y4bfev09dzrhv/cv_JoseMMalaca.pdf?dl=0\" target=\"_blank\" title=\"Download Resume\"></a>");
     $(".Work-Box").append("<div id=\"Works-List\" data-bind=\"foreach: WorksData\"> " +
-        "<p class=\"WorkTitle BlockSelection\" data-bind=\"html: paragraphOne\"></p>" +
+        "<a class=\"WorkTitle BlockSelection\" data-bind=\"html: paragraphOne, attr: {href: url}\" target=\"_blank\"></a>" +
         "<p class=\"WorkDescription BlockSelection\" data-bind=\"html: paragraphTwo\"></p> " +
         "</div>");
     
@@ -22,20 +22,21 @@ function AddWorkData() {
     $("#Education-Page").append("<div class=\"Education-Box\"></div>");
     $(".Education-Box").append("<img class=\"Education_Logo\" src=\"images/Work/Education.png\" title=\"Education\" />");
     $(".Education-Box").append("<div id=\"University\">" +
-        "<p class=\"BlockSelection\"> \><a id=\"DEI\" href=\"http://www.uc.pt/en/fctuc/dei\" target=\"_blank\">Department of Informatics Engineering</a>, Faculty of Science and Technology, University of Coimbra, Portugal</p> " +
-        "<p id=\"Master\" class=\"BlockSelection\"><font size=\"3\" color=\"green\">☑</font> <b>Masters</b> in Informatics Engineering </p> " +
+        "<a class=\"BlockSelection\" id=\"DEI\" href=\"http://www.uc.pt/en/fctuc/dei\" target=\"_blank\">Department of Informatics Engineering, Faculty of Science and Technology, University of Coimbra, Portugal</a> " +
+        "<p id=\"Master\" class=\"BlockSelection\"><font size=\"3\" color=\"green\">☑</font> Informatics Engineering <b>Master</b> </p> " +
         "<p id=\"Graduate\" class=\"BlockSelection\"><font size=\"3\" color=\"green\">☑</font> Informatics Engineering <b>Graduate</b> </p> </div>");
     $(".Education-Box").append("<div id=\"School\"> " +
-        "<p class=\"BlockSelection\"> \><a id=\"Brotero\" href=\"http://www.brotero.pt/\" target=\"blank\">High School Avelar Brotero</a>, Coimbra, Portugal</p> " +
-        "<p id=\"Tecnichian\" class=\"BlockSelection\"><font size=\"3\" color=\"green\">☑</font> Informatics <b>Technician</b> (Técnico Informático)</p> </div>");
-
+        "<a class=\"BlockSelection\" id=\"Brotero\" href=\"http://www.brotero.pt/\" target=\"blank\">High School Avelar Brotero, Coimbra, Portugal</a> " +
+        "<p id=\"Tecnichian\" class=\"BlockSelection\"><font size=\"3\" color=\"green\">☑</font> Informatics <b>Technician</b></p> </div>");
+       
     //Add data for Labels Box
     $("#Education-Page").append("<div class=\"WorkLabels_Wordle\"></div>");
     $(".WorkLabels_Wordle").append("<img src=\"images/Work/Wordle_Work.PNG\" alt=\"Wordle\">");
 }
 
 var WorkData = function(title, company, companyUrl, date, description) {
-    this.paragraphOne = "<font size=\"3\" color=\"green\"> ϟ </font> <b>"+title+"</b>, <a href=\""+companyUrl+"\" target=\"_blank\">"+company+"</a>, " + date + " </p>";
+    this.url = companyUrl;
+    this.paragraphOne = "<font size=\"3\" color=\"green\"> ϟ </font> <b>"+title+"</b>, "+company+", " + date + " </p>";
     this.paragraphTwo = description;
 }
 

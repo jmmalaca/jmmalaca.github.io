@@ -1,11 +1,16 @@
-﻿/* [...mobile styles here <= max-width: 600px...] */
-/* [...tablets styles here >= min-width: 600px...] */
-/* [... desktop styles >= min-width: 900px ...] */
-@media all and (max-width: 972px) {
+﻿/* [...mobile styles here <= max-width: 700px...] */
+@media all and (max-width: 700px) {
     .Labels_Wordle {
         display: none;
     }
+    .WorkLabels_Wordle {
+        display: none;
+    }
 }
+
+/* [...tablets styles here >= min-width: 600px...] */
+/* [... desktop styles >= min-width: 900px ...] */
+
 /* [... desktop styles >= min-width: 972px ... because of the Menu... it growns down] */
 @media all and (min-width: 972px) {
     .Labels_Wordle {

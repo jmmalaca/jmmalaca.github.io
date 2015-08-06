@@ -1,6 +1,26 @@
-﻿/* [...mobile styles here <= max-width: 600px...] */
-/* [...tablets styles here > min-width: 600px...] */
-/* [...desktop styles here > min-width: 900px...] */
+﻿/* [...mobile styles here <= max-width: 700px...] */
+@media all and (max-width: 700px) {
+.Events-Box {
+    background-color: black;
+    -ms-opacity: 0.8;
+    opacity: 0.8;
+    width: 13%;
+    height: auto;
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    border: 2px solid;
+    border-color: black;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 0 10px black;
+    -ms-box-shadow: 0 0 10px black;
+    box-shadow: 0 0 10px black;
+    display: none;
+}
+
+/* [...tablets styles here >= min-width: 700px...] */
+@media all and (min-width: 701px) {
 .Events-Box {
     background-color: black;
     -ms-opacity: 0.8;
@@ -61,3 +81,5 @@
     text-overflow: ellipsis;
     display: block;
 }
+
+/* [...desktop styles here > min-width: 900px...] */

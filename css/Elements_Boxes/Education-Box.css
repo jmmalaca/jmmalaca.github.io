@@ -1,66 +1,68 @@
-﻿/* [...mobile styles here <= max-width: 600px...] */
-/* [...tablets styles here > min-width: 600px...] */
+﻿/* [...mobile styles here <= max-width: 700px...] */
+@media all and (max-width: 700px) {
+    .Education-Box {
+        background-color: black;
+        -ms-opacity: 0.8;
+        opacity: 0.8;
+        width: 40%;
+        height: 80%;
+        position: absolute;
+        top: 17%;
+        left: 55%;
+        border: 2px solid;
+        border-color: black;
+        -ms-border-radius: 5px;
+        border-radius: 5px;
+        -webkit-box-shadow: 0 0 10px black;
+        -ms-box-shadow: 0 0 10px black;
+        box-shadow: 0 0 10px black;
+        overflow: hidden;
+    }
+    
+    .Education_Logo {
+        position: relative;
+        left: 5%;
+        top: 2%;
+        width: 27%;
+        height: 12%;
+        display: inline-block;
+    }
+    
+    #University {
+        position: relative;
+        top: 10%;
+        left: 5%;
+        width: 90%;
+        height: auto;
+        font-family: Arial, cursive;
+        font-size: 85%;
+        word-spacing: 3px;
+        line-height: 130%;
+        color: whitesmoke;
+        text-align: justify;
+        display: inline-block;
+    }
+    
+    #School {
+        position: relative;
+        left: 4%;
+        top: 15%;
+        width: 90%;
+        height: auto;
+        font-family: Arial, cursive;
+        font-size: 85%;
+        word-spacing: 3px;
+        line-height: 130%;
+        color: whitesmoke;
+        text-align: justify;
+        display: inline-block;
+    }
+    
+    #DEI, #Brotero {
+        color: whitesmoke;
+    }
+}
+
+/* [...mobile styles here <= max-width: 700px...] */
+/* [...tablets styles here > min-width: 700px...] */
 /* [...desktop styles here > min-width: 900px...] */
-.Education-Box {
-    background-color: black;
-    -ms-opacity: 0.8;
-    opacity: 0.8;
-    width: 20%;
-    height: auto;
-    position: absolute;
-    top: 30%;
-    left: 55%;
-    border: 2px solid;
-    border-color: black;
-    -ms-border-radius: 5px;
-    border-radius: 5px;
-    -webkit-box-shadow: 0 0 10px black;
-    -ms-box-shadow: 0 0 10px black;
-    box-shadow: 0 0 10px black;
-    overflow: hidden;
-}
-
-.Education_Logo {
-    position: relative;
-    left: 5%;
-    margin-top: 5%;
-    width: 64px;
-    height: 60px;
-    display: inline-block;
-}
-
-#University {
-    position: relative;
-    margin-top: 3%;
-    left: 2%;
-    width: 90%;
-    height: auto;
-    padding: 10px;
-    font-family: Arial, cursive;
-    font-size: 18px;
-    word-spacing: 3px;
-    line-height: 130%;
-    color: whitesmoke;
-    text-align: justify;
-    display: inline-block;
-}
-
-#School {
-    position: relative;
-    margin-bottom: 3%;
-    left: 2%;
-    width: 90%;
-    height: auto;
-    padding: 10px;
-    font-family: Arial, cursive;
-    font-size: 18px;
-    word-spacing: 3px;
-    line-height: 130%;
-    color: whitesmoke;
-    text-align: justify;
-    display: inline-block;
-}
-
-#DEI, #Brotero {
-    color: whitesmoke;
-}
