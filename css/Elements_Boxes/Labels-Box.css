@@ -8,11 +8,8 @@
     }
 }
 
-/* [...tablets styles here >= min-width: 600px...] */
-/* [... desktop styles >= min-width: 900px ...] */
-
-/* [... desktop styles >= min-width: 972px ... because of the Menu... it growns down] */
-@media all and (min-width: 972px) {
+/* [... desktop styles >= min-width: 701px ...] */
+@media all and (min-width: 701px) {
     .Labels_Wordle {
         background-color: black;
         -ms-opacity: 0.8;
