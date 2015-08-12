@@ -59,11 +59,11 @@ $(document).ready(function() {
         var posting = $.post( url, { name: name, mail: mail, text: text } )
         .done(function() {
             //show some positive feedback to the user...
-            swal("Mail sended.", "Our comment was sent, thank you. ;)", "success");
+            swal("Mail sended.", "Our comment was sent, thank you. :)", "success");
         })
         .fail(function() {
             //show some negative feedback to the user...
-            swal("Mail not sended.", "Some error occour.", "error");
+            swal("Mail not sended.", "Some error occour, try again some other time :(", "error");
         })
         .always(function() {
             //clean form inputs data...
