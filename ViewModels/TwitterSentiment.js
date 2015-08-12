@@ -1,4 +1,4 @@
-﻿var DEBUG = true;
+﻿var DEBUG = false;
 var URL = "http://localhost:";
 var Port = 3000;
 

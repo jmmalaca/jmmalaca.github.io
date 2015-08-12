@@ -48,7 +48,7 @@ $(document).ready(function() {
         // Stop form from submitting normally
         event.preventDefault();
         
-        // Get some values from elements on the page:
+        // Get some values from elements on the page
         var $form = $( this ),
             name = $form.find( "input[name='name']" ).val(),
             mail = $form.find( "input[name='mail']" ).val(),
@@ -56,14 +56,16 @@ $(document).ready(function() {
             url = $form.attr( "action" );
         
         // Send the data using post
-        var posting = $.post( url, { name: name, mail: mail, text: text } );
-         
-        // when posting is done...
-        posting.done(function( data ) {
-            
-            //show some feedback to the user...
-            swal("Mail sended.", "send email is in construction... almost there... ;)", "success");
-            
+        var posting = $.post( url, { name: name, mail: mail, text: text } )
+        .done(function() {
+            //show some positive feedback to the user...
+            swal("Mail sended.", "Our comment was sent, thank you. ;)", "success");
+        })
+        .fail(function() {
+            //show some negative feedback to the user...
+            swal("Mail not sended.", "Some error occour.", "error");
+        })
+        .always(function() {
             //clean form inputs data...
             document.getElementById("inputName").value = "";
             document.getElementById("inputMail").value = "";
