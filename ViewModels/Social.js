@@ -1,6 +1,8 @@
 ﻿/* global Share */
 /* global swal */
 
+var url = "http://node-server-v1.herokuapp.com";
+
 function AddSocialData() {
     //Add Social Box... Social Linnks...
     $("#Social-Page").append("<div class=\"Social-Box\"></div>");
@@ -20,11 +22,15 @@ function AddSocialData() {
     //Twitter Widget
     //$("#Social-Page").append("<a id=\"Twitter-Box\" class=\"twitter-timeline\" href=\"https://twitter.com/tOOnPT\" data-widget-id=\"489022777085526016\">Tweets de @tOOnPT</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+\"://platform.twitter.com/widgets.js\";fjs.parentNode.insertBefore(js,fjs);}}(document,\"script\",\"twitter-wjs\");</script>");
 
+    if (DEBUG)
+    {
+        url = URL + Port;   
+    }
     //Mail Box...
     $("#Social-Page").append("<div class=\"Mail-Box\"></div>");
     $(".Mail-Box").append("<img class=\"Mail\" src=\"images/Social/mail.png\" />");
     $(".Mail-Box").append("<p id=\"TitleMail\" class=\"BlockSelection\"> Drop me a line </p>");
-    $(".Mail-Box").append("<form class=\"MailMe\" id =\"MailForm\" action=\"mailto:jose.miguel.malaca@me.com\" method=\"post\">"
+    $(".Mail-Box").append("<form class=\"MailMe\" id =\"MailForm\" enctype=\"text/plain\" method=\"get\" action=\"" + url + "/sendMail\">"
         + "<input id=\"inputName\" type=\"text\" name=\"name\" placeholder=\"name\" required=\"required\" size=\"15\">"
         + "<input id=\"inputMail\" type=\"email\" name=\"mail\" placeholder=\"email\" required=\"required\" size=\"25\">"
         + "<br><br><input id=\"inputText\" type=\"text\" name=\"comment\" placeholder=\"send email is in construction... almost there... ;)\" required=\"required\" size=\"50\">"
@@ -39,15 +45,30 @@ $(document).ready(function() {
 
     //what happens in the Mail-Box...
     $("#MailForm").submit(function (event) {
+        // Stop form from submitting normally
         event.preventDefault();
         
-        //show some feedback to the user...
-        swal("Mail sended.", "send email is in construction... almost there... ;)", "success");
+        // Get some values from elements on the page:
+        var $form = $( this ),
+            name = $form.find( "input[name='name']" ).val(),
+            mail = $form.find( "input[name='mail']" ).val(),
+            text = $form.find( "input[name='comment']" ).val(),
+            url = $form.attr( "action" );
         
-        //clean form inputs data...
-        document.getElementById("inputName").value = "";
-        document.getElementById("inputMail").value = "";
-        document.getElementById("inputText").value = "";
+        // Send the data using post
+        var posting = $.post( url, { name: name, mail: mail, text: text } );
+         
+        // when posting is done...
+        posting.done(function( data ) {
+            
+            //show some feedback to the user...
+            swal("Mail sended.", "send email is in construction... almost there... ;)", "success");
+            
+            //clean form inputs data...
+            document.getElementById("inputName").value = "";
+            document.getElementById("inputMail").value = "";
+            document.getElementById("inputText").value = "";
+        });
     });
     
     //and with the Share button...
@@ -58,5 +79,4 @@ $(document).ready(function() {
             }
         }
     });
-
 });
