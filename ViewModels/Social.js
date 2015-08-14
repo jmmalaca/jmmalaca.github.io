@@ -33,7 +33,7 @@ function AddSocialData() {
     $(".Mail-Box").append("<form class=\"MailMe\" id =\"MailForm\" enctype=\"text/plain\" method=\"get\" action=\"" + url + "/sendMail\">"
         + "<input id=\"inputName\" type=\"text\" name=\"name\" placeholder=\"name\" required=\"required\" size=\"15\">"
         + "<input id=\"inputMail\" type=\"email\" name=\"mail\" placeholder=\"email\" required=\"required\" size=\"25\">"
-        + "<br><br><input id=\"inputText\" type=\"text\" name=\"comment\" placeholder=\"send email is in construction... almost there... ;)\" required=\"required\" size=\"50\">"
+        + "<br><br><input id=\"inputText\" type=\"text\" name=\"comment\" placeholder=\"comment\" required=\"required\" size=\"50\">"
         + "<br><br><input type=\"submit\" class=\"btn btn-sm btn-primary\" value=\"Send\">"
         + "</form>");
 }
