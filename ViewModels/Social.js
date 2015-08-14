@@ -38,6 +38,37 @@ function AddSocialData() {
         + "</form>");
 }
 
+function SendMailDataToServer(url, name, mail, text, byConsole){
+    // Send the data using post
+    var sendResult = false;
+    $.post( url, { name: name, mail: mail, text: text } )
+    .done(function() {
+        if (byConsole == false)
+        {
+            //show some positive feedback to the user...
+            swal("Mail sended.", "Our comment was sent, thank you. :)", "success");
+        }
+        sendResult = true;
+    })
+    .fail(function() {
+        if (byConsole == false)
+        {
+            //show some negative feedback to the user...
+            swal("Mail not sended.", "Some error occour, try again some other time :(", "error");
+        }
+    })
+    .always(function() {
+        if (byConsole == false)
+        {
+            //clean form inputs data...
+            document.getElementById("inputName").value = "";
+            document.getElementById("inputMail").value = "";
+            document.getElementById("inputText").value = "";
+        }
+    });
+    return sendResult;
+}
+
 //document ready event ----------
 $(document).ready(function() {
 
@@ -54,23 +85,7 @@ $(document).ready(function() {
             mail = $form.find( "input[name='mail']" ).val(),
             text = $form.find( "input[name='comment']" ).val(),
             url = $form.attr( "action" );
-        
-        // Send the data using post
-        var posting = $.post( url, { name: name, mail: mail, text: text } )
-        .done(function() {
-            //show some positive feedback to the user...
-            swal("Mail sended.", "Our comment was sent, thank you. :)", "success");
-        })
-        .fail(function() {
-            //show some negative feedback to the user...
-            swal("Mail not sended.", "Some error occour, try again some other time :(", "error");
-        })
-        .always(function() {
-            //clean form inputs data...
-            document.getElementById("inputName").value = "";
-            document.getElementById("inputMail").value = "";
-            document.getElementById("inputText").value = "";
-        });
+        SendMailDataToServer(url, name, mail, text, false);
     });
     
     //and with the Share button...

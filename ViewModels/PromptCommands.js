@@ -105,9 +105,8 @@ function sendMail(terminal, command) {
     var regexRule = "<[a-zA-Z ]+>" + //name
         " <[a-zA-Z0-9\\_\\-\\.]+@(([a-zA-Z0-9-]+\\.)+)([a-zA-Z]{2,4})>" + //mail
         " <.+>$"; //text
-
     //console.log("<[a-zA-Z0-9\\_\\-\\.]+@(([a-zA-Z0-9-]+\\.)+)([a-zA-Z]{2,4})>"); //see if everything is right about the mail ;)
-
+    
     if (command.match(regexRule) != null) {
         var atributes = command.split("<");
         var name = atributes[1].substring(0, atributes[1].length - 2);
@@ -125,9 +124,17 @@ function sendMail(terminal, command) {
         else if (text == "")
             terminal.error(">Couldn't send your mail... miss you message");
         else {
-            var mailData = name + ", " + mail + ", " + text;
-            window.open("mailto:jose.miguel.malaca@me.com?subject=Contact&body=" + mailData);
-            terminal.echo("[[b;#009900;#000000]Sended]. Thx, i will responde you shortly... ;)");
+            var url = "http://node-server-v1.herokuapp.com";
+            if (DEBUG)
+            {
+                url = URL + Port;   
+            }
+            var sendResult = SendMailDataToServer(url + "/sendMail", name, mail, text, true);
+            if (sendResult){
+                terminal.echo("[[b;#009900;#000000]Sent]. Thx, i will responde you shortly... ;)");
+            }else{
+                terminal.echo("[[b;#e50000;#000000]Not Sent]. Some error occour, try again later... :(");
+            }
         }
     } else {
         terminal.error(">Couldn't send your mail... use \"help send\" ;)");
