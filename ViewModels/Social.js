@@ -40,7 +40,7 @@ function AddSocialData() {
 
 function SendMailDataToServer(url, name, mail, text, byConsole){
     // Send the data using post
-    var sendResult = false;
+    var sendResult = true;
     $.post( url, { name: name, mail: mail, text: text } )
     .done(function() {
         if (byConsole == false)
@@ -48,7 +48,6 @@ function SendMailDataToServer(url, name, mail, text, byConsole){
             //show some positive feedback to the user...
             swal("Mail sended.", "Our comment was sent, thank you. :)", "success");
         }
-        sendResult = true;
     })
     .fail(function() {
         if (byConsole == false)
@@ -56,6 +55,7 @@ function SendMailDataToServer(url, name, mail, text, byConsole){
             //show some negative feedback to the user...
             swal("Mail not sended.", "Some error occour, try again some other time :(", "error");
         }
+        sendResult = false;
     })
     .always(function() {
         if (byConsole == false)
