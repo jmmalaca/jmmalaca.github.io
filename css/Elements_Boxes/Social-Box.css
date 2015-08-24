@@ -128,7 +128,7 @@
         -ms-opacity: 0.8;
         opacity: 0.8;
         width: 23%;
-        height: 27%;
+        height: 40%;
         position: absolute;
         top: 30%;
         left: 5%;
@@ -145,7 +145,7 @@
     .Mail {
         display: inline-block;
         position: absolute;
-        top: 2%;
+        top: 7%;
         left: 65%;
     }
 

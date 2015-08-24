@@ -35,6 +35,7 @@ function AddSocialData() {
         + "<input id=\"inputMail\" type=\"email\" name=\"mail\" placeholder=\"email\" required=\"required\" size=\"25\">"
         + "<br><br><input id=\"inputText\" type=\"text\" name=\"comment\" placeholder=\"comment\" required=\"required\" size=\"50\">"
         + "<br><br><input type=\"submit\" class=\"btn btn-sm btn-primary\" value=\"Send\">"
+        + "<br><br><div class=\"g-recaptcha\" data-sitekey=\"6LcNwgsTAAAAAH8rjNxNN_ZKEDtEbaUSvU_lj4oj\"></div>"
         + "</form>");
 }
 
