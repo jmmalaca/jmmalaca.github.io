@@ -39,10 +39,6 @@ function AddSocialData() {
         + "</form>");
 }
 
-var reCaptchaCallback = function(response) {
-    alert(response);
-};
-
 function SendMailDataToServer(url, name, mail, text, byConsole){
     // Send the data using post
     var sendResult = false;
@@ -76,6 +72,13 @@ function SendMailDataToServer(url, name, mail, text, byConsole){
     return sendResult;
 }
 
+var SendMail = false;
+var reCaptchaCallback = function(response) {
+    if (response.length > 0) {
+        SendMail = true;
+    }
+};
+
 //document ready event ----------
 $(document).ready(function() {
 
@@ -86,13 +89,20 @@ $(document).ready(function() {
         // Stop form from submitting normally
         event.preventDefault();
         
-        // Get some values from elements on the page
-        var $form = $( this ),
-            name = $form.find( "input[name='name']" ).val(),
-            mail = $form.find( "input[name='mail']" ).val(),
-            text = $form.find( "input[name='comment']" ).val(),
-            url = $form.attr( "action" );
-        SendMailDataToServer(url, name, mail, text, false);
+        if (SendMail){
+            // Get some values from elements on the page
+            var $form = $( this ),
+                name = $form.find( "input[name='name']" ).val(),
+                mail = $form.find( "input[name='mail']" ).val(),
+                text = $form.find( "input[name='comment']" ).val(),
+                url = $form.attr( "action" );
+            SendMailDataToServer(url, name, mail, text, false);
+        }
+        else
+        {
+            //reCapcha... show feedback to the user...
+            swal("reCaptcha", "reCaptcha not Valdated. :(", "error");
+        }
     });
     
     //and with the Share button...
