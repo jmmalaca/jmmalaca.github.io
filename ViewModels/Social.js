@@ -66,7 +66,7 @@ function SendMailDataToServer(url, name, mail, text, byConsole){
             document.getElementById("inputMail").value = "";
             document.getElementById("inputText").value = "";
             
-            $("#reCaptcha").reset("reCaptcha")
+            grecaptcha.reset();
         }
     });
     return sendResult;
