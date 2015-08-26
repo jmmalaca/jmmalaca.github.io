@@ -35,7 +35,7 @@ function AddSocialData() {
         + "<input id=\"inputMail\" type=\"email\" name=\"mail\" placeholder=\"email\" required=\"required\" size=\"25\">"
         + "<br><br><input id=\"inputText\" type=\"text\" name=\"comment\" placeholder=\"comment\" required=\"required\" size=\"50\">"
         + "<br><br><input id=\"SubmitButton\" type=\"submit\" class=\"btn btn-sm btn-primary\" value=\"Send\">"
-        + "<br><br><div id=\"reCaptcha\" class=\"g-recaptcha\" data-theme=\"dark\" data-size=\"normal\" data-sitekey=\"6LcNwgsTAAAAAH8rjNxNN_ZKEDtEbaUSvU_lj4oj\"></div>"
+        + "<br><br><div id=\"reCaptcha\"></div>"
         + "</form>");
 }
 
@@ -72,17 +72,30 @@ function SendMailDataToServer(url, name, mail, text, byConsole){
     return sendResult;
 }
 
+var correctCaptcha = function(response) {
+    alert(response);
+};
+
 //document ready event ----------
 $(document).ready(function() {
 
     AddSocialData();
+    
+    var onloadCallback = function() {
+        grecaptcha.render('reCaptcha', {
+            'sitekey' : '6LcNwgsTAAAAAH8rjNxNN_ZKEDtEbaUSvU_lj4oj',
+            'callback' : 'correctCaptcha',
+            'data-theme': 'dark',
+            'data-size': 'normal'
+        });
+    };
 
     //what happens in the Mail-Box...
     $("#MailForm").submit(function (event) {
         // Stop form from submitting normally
         event.preventDefault();
         
-        var reCaptureResult = $("#reCaptcha").getResponse("reCaptcha");
+        var reCaptureResult = $("#reCaptcha")
         alert(reCaptureResult);
         
         // Get some values from elements on the page
