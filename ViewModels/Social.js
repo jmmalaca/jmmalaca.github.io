@@ -34,7 +34,7 @@ function AddSocialData() {
         + "<input id=\"inputName\" type=\"text\" name=\"name\" placeholder=\"name\" required=\"required\" size=\"15\">"
         + "<input id=\"inputMail\" type=\"email\" name=\"mail\" placeholder=\"email\" required=\"required\" size=\"25\">"
         + "<br><br><input id=\"inputText\" type=\"text\" name=\"comment\" placeholder=\"comment\" required=\"required\" size=\"50\">"
-        + "<br><br><input type=\"submit\" class=\"btn btn-sm btn-primary\" value=\"Send\">"
+        + "<br><br><input id=\"SubmitButton\" type=\"submit\" class=\"btn btn-sm btn-primary\" value=\"Send\">"
         + "<br><br><div id=\"reCaptcha\" class=\"g-recaptcha\" data-theme=\"dark\" data-size=\"normal\" data-sitekey=\"6LcNwgsTAAAAAH8rjNxNN_ZKEDtEbaUSvU_lj4oj\"></div>"
         + "</form>");
 }
@@ -66,7 +66,7 @@ function SendMailDataToServer(url, name, mail, text, byConsole){
             document.getElementById("inputMail").value = "";
             document.getElementById("inputText").value = "";
             
-            grecaptcha.reset( "#reCaptcha" )
+            $("#reCaptcha").reset("reCaptcha")
         }
     });
     return sendResult;
@@ -81,6 +81,9 @@ $(document).ready(function() {
     $("#MailForm").submit(function (event) {
         // Stop form from submitting normally
         event.preventDefault();
+        
+        var reCaptureResult = $("#reCaptcha").getResponse();
+        alert(reCaptureResult);
         
         // Get some values from elements on the page
         var $form = $( this ),
