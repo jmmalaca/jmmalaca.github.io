@@ -82,7 +82,7 @@ $(document).ready(function() {
         // Stop form from submitting normally
         event.preventDefault();
         
-        var reCaptureResult = $("#reCaptcha").getResponse();
+        var reCaptureResult = $("#reCaptcha").getResponse("reCaptcha");
         alert(reCaptureResult);
         
         // Get some values from elements on the page
