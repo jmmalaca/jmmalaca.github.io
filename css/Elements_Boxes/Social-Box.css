@@ -166,10 +166,42 @@
     .MailMe {
         position: absolute;
         margin: 0;
-        top: 35%;
+        top: 25%;
         left: 5%;
+        width: 90%;
     }
-
+    
+    input[type=submit], input[type=email], input[type=text] {
+        padding: 10px;
+        font-size: 14px;
+        line-height: 12px;
+        float: left;
+        border: 0;
+        display: block;
+        margin: 5px;
+    }
+    
+    input[type=submit] {
+        height: 10%;
+        width: 15%;
+    }
+    
+    input[type=email] {
+        width: 30%;
+    }
+    
+    input[name=name] {
+        width: 25%;
+    }
+    
+    input[name=comment] {
+        width: 60%;
+    }
+    
+    #reCaptcha {
+        top: 70%;
+    }
+    
     .YouTube {
         display: inline-block;
         position: absolute;
