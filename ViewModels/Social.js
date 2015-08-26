@@ -41,7 +41,6 @@ function AddSocialData() {
 
 function SendMailDataToServer(url, name, mail, text, byConsole){
     // Send the data using post
-    var sendResult = false;
     $.post( url, { name: name, mail: mail, text: text } )
     .done(function() {
         if (byConsole == false)
@@ -49,7 +48,6 @@ function SendMailDataToServer(url, name, mail, text, byConsole){
             //show some positive feedback to the user...
             swal("Mail sended.", "Our comment was sent, thank you. :)", "success");
         }
-        sendResult = true;
     })
     .fail(function() {
         if (byConsole == false)
@@ -69,7 +67,45 @@ function SendMailDataToServer(url, name, mail, text, byConsole){
             grecaptcha.reset();
         }
     });
-    return sendResult;
+}
+
+function SendMailDataToServer_VersionTwo(url, name, mail, text, byConsole){
+    // Send the data using post
+    var sendResult = false;
+    swal({   
+        title: "Send your comment", 
+        type: "info",
+        closeOnConfirm: false,
+        showLoaderOnConfirm: true,
+        }, 
+        function(){   
+            $.post( url, { name: name, mail: mail, text: text } )
+            .done(function() {
+                if (byConsole == false)
+                {
+                    //show some positive feedback to the user...
+                    swal("Mail sended.", "Our comment was sent, thank you. :)", "success");
+                }
+            })
+            .fail(function() {
+                if (byConsole == false)
+                {
+                    //show some negative feedback to the user...
+                    swal("Mail not sended.", "Some error occour, try again some other time :(", "error");
+                }
+            })
+            .always(function() {
+                if (byConsole == false)
+                {
+                    //clean form inputs data...
+                    document.getElementById("inputName").value = "";
+                    document.getElementById("inputMail").value = "";
+                    document.getElementById("inputText").value = "";
+                    
+                    grecaptcha.reset();
+                }
+            });
+    });
 }
 
 var SendMail = false;
@@ -96,7 +132,7 @@ $(document).ready(function() {
                 mail = $form.find( "input[name='mail']" ).val(),
                 text = $form.find( "input[name='comment']" ).val(),
                 url = $form.attr( "action" );
-            SendMailDataToServer(url, name, mail, text, false);
+            SendMailDataToServer_VersionTwo(url, name, mail, text, false);
         }
         else
         {
