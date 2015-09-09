@@ -112,6 +112,9 @@
     width: 32px;
     height: 32px;
     display: inline-block;
+    background-image: url("../../images/Work/CV.png");
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 #Works-List {
