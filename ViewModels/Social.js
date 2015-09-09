@@ -33,15 +33,24 @@ function AddSocialData() {
     $(".Mail-Box").append("<form class=\"MailMe\" id =\"MailForm\" enctype=\"text/plain\" method=\"get\" action=\"" + url + "/sendMail\">"
         + "<input id=\"inputName\" type=\"text\" name=\"name\" placeholder=\"name\" required=\"required\" size=\"15\">"
         + "<input id=\"inputMail\" type=\"email\" name=\"mail\" placeholder=\"email\" required=\"required\" size=\"25\">"
+<<<<<<< HEAD
         + "<br><br><input id=\"inputText\" type=\"text\" name=\"comment\" placeholder=\"comment\" required=\"required\" size=\"50\">"
         + "<br><br><input type=\"submit\" class=\"btn btn-sm btn-primary\" value=\"Send\">"
         + "<br><br><div class=\"g-recaptcha\" data-sitekey=\"6LcNwgsTAAAAAH8rjNxNN_ZKEDtEbaUSvU_lj4oj\"></div>"
+=======
+        + "<br><br><br><input id=\"inputText\" type=\"text\" name=\"comment\" placeholder=\"comment\" required=\"required\" size=\"50\">"
+        + "<br><br><br><input id=\"SubmitButton\" type=\"submit\" class=\"btn btn-sm btn-primary\" value=\"Send\">"
+        + "<div id=\"reCaptcha\" class=\"g-recaptcha\" data-callback=\"reCaptchaCallback\" data-theme=\"dark\" data-size=\"normal\" data-sitekey=\"6LcNwgsTAAAAAH8rjNxNN_ZKEDtEbaUSvU_lj4oj\"></div>"
+>>>>>>> origin/master
         + "</form>");
 }
 
 function SendMailDataToServer(url, name, mail, text, byConsole){
     // Send the data using post
+<<<<<<< HEAD
     var sendResult = true;
+=======
+>>>>>>> origin/master
     $.post( url, { name: name, mail: mail, text: text } )
     .done(function() {
         if (byConsole == false)
@@ -65,10 +74,18 @@ function SendMailDataToServer(url, name, mail, text, byConsole){
             document.getElementById("inputName").value = "";
             document.getElementById("inputMail").value = "";
             document.getElementById("inputText").value = "";
+            
+            grecaptcha.reset();
         }
     });
-    return sendResult;
 }
+
+var SendMail = false;
+var reCaptchaCallback = function(response) {
+    if (response.length > 0) {
+        SendMail = true;
+    }
+};
 
 //document ready event ----------
 $(document).ready(function() {
@@ -80,13 +97,20 @@ $(document).ready(function() {
         // Stop form from submitting normally
         event.preventDefault();
         
-        // Get some values from elements on the page
-        var $form = $( this ),
-            name = $form.find( "input[name='name']" ).val(),
-            mail = $form.find( "input[name='mail']" ).val(),
-            text = $form.find( "input[name='comment']" ).val(),
-            url = $form.attr( "action" );
-        SendMailDataToServer(url, name, mail, text, false);
+        if (SendMail){
+            // Get some values from elements on the page
+            var $form = $( this ),
+                name = $form.find( "input[name='name']" ).val(),
+                mail = $form.find( "input[name='mail']" ).val(),
+                text = $form.find( "input[name='comment']" ).val(),
+                url = $form.attr( "action" );
+            SendMailDataToServer(url, name, mail, text, false);
+        }
+        else
+        {
+            //reCapcha... show feedback to the user...
+            swal("reCaptcha", "reCaptcha not Valdated. :(", "error");
+        }
     });
     
     //and with the Share button...

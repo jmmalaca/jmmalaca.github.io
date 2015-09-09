@@ -72,10 +72,18 @@ $(document).ready(function () {
     
     //Start... fullPage
     $("#fullPage").fullpage({
+        //Navigation
         anchors: ['Presentation', 'Work', 'Social', 'Projects'],
         menu: '#Menu_Buttons',
+        
+        //Scrolling
         css3: true,
         easing: 'easeOutBack',
+        
+        //Accessibility
+        keyboardScrolling: false,
+        
+        //Events
         afterLoad: function (anchorLink, index) {
             //using anchorLink
             if (anchorLink == 'Presentation') {
