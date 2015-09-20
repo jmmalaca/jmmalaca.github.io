@@ -1,7 +1,5 @@
 ###My Personal Web Page .v1.0
 
-![alt tag](https://www.dropbox.com/s/gdir4n7zh1ihm00/print.PNG?dl=0)
-
 ####All files, code, of my personal web page.
 
 #####Programming languages used:
