@@ -2,6 +2,8 @@
 
 ####All files, code, of my personal web page.
 
+[WebSite Preview!](images/GitHub_Preview/print.png)
+
 #####Programming languages used:
 - Html
 - CSS
