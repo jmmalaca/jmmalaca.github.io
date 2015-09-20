@@ -2,7 +2,7 @@
 
 ####All files, code, of my personal web page.
 
-[WebSite Preview!](images/GitHub_Preview/print.PNG)
+![WebSite Preview](images/GitHub_Preview/print.PNG)
 
 #####Programming languages used:
 - Html
