@@ -1,0 +1,45 @@
+#background {
+    background-image: url("../images/bike.jpg");
+    background-repeat: no-repeat;
+    background-position: center center; /* First value is from left and second is from top. You can use use number as well*/
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+/* Width and Heigth... just put it on the screen... :) */
+#window-size {
+    position: fixed;
+    top: 2%;
+    right: 2.5%;
+    z-index: 10000;
+    margin: 1%;
+    font-family: Arial, cursive;
+    font-style: normal;
+    line-height: 2px;
+    font-size: 12px;
+    color: #778899;
+    text-align: right;
+}
+
+/* Scrool bar.... vertical... horizontal... good looking... :P*/
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #778899;
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.75); 
+}

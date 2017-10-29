@@ -1,0 +1,90 @@
+#prompt {
+  background-color: black;
+  opacity: 0.8;
+  width: 94%;
+  height: 95%;
+  position: absolute;
+  top: 2%;
+  left: 3%;
+  border: 2px solid;
+  border-color: black;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px black;
+}
+
+# ------ Cursor blink ------------------------
+@keyframes blink {
+    50% {
+        color: #000;
+        background: #0c0;
+        -webkit-box-shadow: 0 0 5px rgba(0,100,0,50);
+        box-shadow: 0 0 5px rgba(0,100,0,50);
+    }
+}
+
+@-webkit-keyframes blink {
+    50% {
+        color: #000;
+        background: #0c0;
+        -webkit-box-shadow: 0 0 5px rgba(0,100,0,50);
+        box-shadow: 0 0 5px rgba(0,100,0,50);
+    }
+}
+
+@-ms-keyframes blink {
+    50% {
+        color: #000;
+        background: #0c0;
+        -webkit-box-shadow: 0 0 5px rgba(0,100,0,50);
+        box-shadow: 0 0 5px rgba(0,100,0,50);
+    }
+}
+
+@-moz-keyframes blink {
+    50% {
+        color: #000;
+        background: #0c0;
+        -webkit-box-shadow: 0 0 5px rgba(0,100,0,50);
+        box-shadow: 0 0 5px rgba(0,100,0,50);
+    }
+}
+
+.cmd .cursor.blink {
+    -webkit-animation: 1s blink infinite;
+    animation: 1s blink infinite;
+    -webkit-box-shadow: 0 0 0 rgba(0,100,0,50);
+    box-shadow: 0 0 0 rgba(0,100,0,50);
+    border: none;
+    margin: 0;
+}
+#term {
+    height: 100vh;
+    --background: #031e11;
+    --size: 1.5;
+}
+#term::after {
+    content: " ";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(18, 16, 16, 0.2);
+    opacity: 0;
+    z-index: 2;
+    pointer-events: none;
+    animation: flicker 0.12s infinite;
+}
+.cmd:focus-within .prompt {
+    color: white;
+}
+.terminal {
+    text-shadow: 0 0.2rem 1rem #0c7b46;
+}
+.terminal a:hover {
+    background: #0F60FF;
+    color: var(--background, #aaa);
+    text-decoration: none;
+}
