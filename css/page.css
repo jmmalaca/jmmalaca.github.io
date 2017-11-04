@@ -28,6 +28,12 @@
     text-align: right;
 }
 
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
 /* Scrool bar.... vertical... horizontal... good looking... :P*/
 ::-webkit-scrollbar {
     width: 12px;
